@@ -15,7 +15,7 @@ const Blog = mongoose.model('blog',BlogSchema)
 
 //insert 1
 // User.create({
-//     username: 'admin',
+//     username: 'nguyen manager',
 //     password: '1234567',
 //     gender: 'female',
 // })
@@ -36,3 +36,63 @@ const Blog = mongoose.model('blog',BlogSchema)
 // .catch(e=>console.log(e))
 
 
+// insert many
+// User.insertMany([
+//     {
+//         username: 'manager 01',
+//         password: 'pw1',
+//         gender: 'female',
+//     },
+//     {
+//         username: 'manager 02',
+//         password: 'pw2',
+//         gender: 'male',
+//     },
+//     {
+//         username: 'teo nguyen',
+//         password: 'pw3',
+//         gender: 'male',
+//     },
+//     {
+//         username: 'ti nguyen',
+//         password: 'pw3',
+//         gender: 'male',
+//     }
+// ])
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+
+// find, findById, findOne
+// User.find()
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+// SELECT username FROM users 
+// User.find({username: 'admin 02'},{username:1, _id:0})
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+// User.findOne({username: 'admin 02'},{username:1, _id:0})
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+// User.findById('5c8cb4c3792f222c9faf1f1n')
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e.message))
+
+// like , in, not in, or
+
+// SELECT * FROM users WHERE username LIKE '%manager%'
+// User.find({
+//     username: { $regex : /manager/}
+// })
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+// SELECT * FROM users WHERE username LIKE 'manager%'
+User.find({
+    username: { $regex : /^manager/}
+})
+.then(r=>console.log(r))
+.catch(e=>console.log(e))
