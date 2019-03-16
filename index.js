@@ -91,8 +91,64 @@ const Blog = mongoose.model('blog',BlogSchema)
 // .catch(e=>console.log(e))
 
 // SELECT * FROM users WHERE username LIKE 'manager%'
+// User.find({
+//     username: { $regex : /^manager/}
+// })
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+// SELECT * FROM users WHERE username LIKE '%manager'
+// User.find({
+//     username: { $regex : /manager$/}
+// })
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+//  >= > < <= lte
+// gte  price >= 12
+// User.find({
+//     price: { $gte : 12}
+// })
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+//ObjectId("5c8cb7d01a70f62ee0b6306a")
+// ObjectId("5c8cb7d01a70f62ee0b6306c")
+
+// SELECT * 
+// FROM user 
+// WHERE id 
+// IN('5c8cb7d01a70f62ee0b6306c','5c8cb7d01a70f62ee0b6306a')
+// User.find({
+//     _id: {$in: ['5c8cb7d01a70f62ee0b6306c','5c8cb7d01a70f62ee0b6306a']}
+// })
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+// ORDER BY ACS 1, DESC -1
+// User.find().sort({username:1})
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+//.countDocuments()
+//LIMIT 0,3   LIMIT 3,4 : position, quantity
+// User.find().skip(3).limit(4)
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+//ObjectId("5c8cb9dc2fabf5303279d078")
+// User.findByIdAndUpdate('5c8cb9dc2fabf5303279d078',{gender:'male'})
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+// User.findOneAndUpdate({username:'ti nguyen'},{gender:'nam'})
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
 User.find({
-    username: { $regex : /^manager/}
+    username:{
+        $regex: /admin/
+    }
 })
+.updateMany({password:'new pw'})
 .then(r=>console.log(r))
 .catch(e=>console.log(e))
