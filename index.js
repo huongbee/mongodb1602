@@ -22,13 +22,17 @@ const Blog = mongoose.model('blog',BlogSchema)
 // .then(user=>console.log(user))
 // .catch(err=>console.log(err))
 
-const blog01 = new Blog({
-    title:'News 02',
-    author: '5c8cae3d213dc228b664b968'
-})
-blog01.save()
-.then(blog=>console.log(blog))
-.catch(e=>console.log(e))
+// const blog01 = new Blog({
+//     title:'News 02',
+//     author: '5c8cae3d213dc228b664b968'
+// })
+// blog01.save()
+// .then(blog=>console.log(blog))
+// .catch(e=>console.log(e))
 
 //ObjectId("5c8cae3d213dc228b664b968")
+// User.findByIdAndDelete('5c8cae3d213dc228b664b968')
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
 
